@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-demo-web-app
+spec:
+  selector:
+    matchLabels:
+      run: k8s-demo-web-app
+  replicas: 1
+  template: 
+    metadata: 
+      labels:
+        run: k8s-demo-web-app
+    spec: 
+      containers:
+        - name: k8s-demo-web-app
+          image: k8s-demo-web-app:v1.0
+          ports:
+            - containerPort: 3000
+              protocol: TCP
