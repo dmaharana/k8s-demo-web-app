@@ -14,7 +14,7 @@ spec:
     spec: 
       containers:
         - name: k8s-demo-web-app
-          image: k8s-demo-web-app:v1.0
+          image: localhost:5001/k8s-demo-web-app:latest
           ports:
             - containerPort: 3000
               hostPort: 9101
